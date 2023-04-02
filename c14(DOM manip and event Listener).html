@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM MANIPULATION</title>
+</head>
+
+<body>
+    <h1>
+        What Goes Around Comes Around
+    </h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem enim iusto impedit accusantium, esse, veniam dolor
+        dignissimos nam a, fuga accusamus totam placeat. Quo modi aliquam voluptates quia eligendi, exercitationem dicta
+        voluptate et dignissimos fuga. Nisi ut dolorem, impedit velit iste adipisci, eaque debitis soluta quod,
+        blanditiis sint. Voluptate, porro?
+        
+    </p>
+    <h3>
+        This is h3
+    </h3>
+    <script>
+        const h2 = document.createElement('h2'); //create an elemnt
+        h2.innerText = "This was created by DOM"; //give value to elemnt
+        h2.setAttribute('id', "DOM h2"); //assign id 
+        h2.setAttribute('class', "subhead"); //assign class
+        document.body.appendChild(h2); //append the element to the dom
+        
+        const p2 = document.createElement('p2');
+        p2.innerText = "This para was added with dom. Make sure you learn the other DOM methods too. dignissimos nam a, fuga accusamus totam placeat. Quo modi aliquam voluptates quia eligendi, exercitationem dict a voluptate et dignissimos fuga. Nisi ut dolorem, impedit velit iste adipisci, eaque debitis soluta quod,blanditiis sint. Voluptate, porro?";
+
+        p2.setAttribute('id', "Secpara");
+        p2.setAttribute('class', "secondparagraphs");
+        document.body.appendChild(p2);
+
+        //add eventListener
+        const target = document.querySelector('h2');
+
+        function handleClick() {
+            console.log("H2 was clicked with js eventListener.")
+        };
+        target.addEventListener('click', handleClick);
+        //Note: We can also add event list inside html tags,eg <p onClick="func"> heheh </p>
+        
+
+        //combine both selector and event list
+
+        document.querySelector('h3').addEventListener('click',()=>{
+            console.log("H3 was clicked")
+        })
+    </script>
+
+</body>
+
+</html>
+
+<!-- document is the DOM  -->
+<!-- RUn  the following commands in Browser console to select elemnts in DOM:
+
+document.querySelector('p') will select first p
+document.querySelectorAll('p') will select all p
+
+document.getElementById('#') obvious
+document.getElementsByClassName('') obvious
+
+-->
